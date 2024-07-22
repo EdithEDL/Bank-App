@@ -1,0 +1,28 @@
+
+<div  class="row mt-4">
+    <div class="col-lg-4 offset-lg-4 "  >
+
+        <div class="card border-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header text-center">{{operacion}} Monto</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="addAmount()" >
+                    <div>
+                        <label for="price" class="form-label mt-2">Monto Total: </label>
+                        <input formControlName="totalAmount"  type="number" class="form-control" id="totalAmount"  placeholder="Ingresa el Monto"> 
+                        <span *ngIf="form.get('totalAmount')?.hasError('required') && form.get('totalAmount')?.touched">
+                            El Campo Monto es <strong>Obligatorio</strong>
+                        </span>
+                    
+                    </div>
+                    <div>
+                        <button [disabled]="form.invalid" type="submit" class="btn btn-success btn-sm ms-5 mt-4" > Guardar</button >
+                        <button routerLink="/montos" type="button" class="btn btn-danger btn-sm ms-3 mt-4 "> Volver</button>
+                    </div>
+
+                </form>
+          </div>
+
+    </div>
+</div>
+
+

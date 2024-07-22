@@ -1,0 +1,35 @@
+
+<div  class="container">
+    <div class="title">
+        <h4 >Lista de Intereses</h4>
+        <button type="button" class="btn btn-success " routerLink="/agregarIntereses">Agregar Interes</button>
+    </div>
+    
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Plazo</th>
+            <th scope="col">Interes</th>
+            <th scope="col">Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let itemInterest of listInterest"  class="table-secondary">
+            <td >{{itemInterest.idInterest}}</td>
+            <td >{{itemInterest.Plazo?.description}}</td>
+            <td >{{itemInterest.interest}} %</td>
+            <td>
+              <button (click)="deleteInterest(itemInterest.idInterest!)" type="button" class="btn btn-warning btn-sm ms-2"> Eliminar</button>
+            </td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+
+</div>
+

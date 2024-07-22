@@ -1,0 +1,41 @@
+
+<div  class="container">
+    <div class="title">
+        <h4 >Lista de Prestamos</h4>
+        <button type="button" class="btn btn-success " routerLink="/agregarPrestamo">Agregar Prestamos</button>
+    </div>
+    
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Plazo</th>
+            <th scope="col">Taza de Interes</th>
+            <th scope="col">Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let itemLoan of listLoan"  class="table-secondary">
+            <td >{{itemLoan.idLoan}}</td>
+            <td >{{itemLoan.Cliente?.nameClient}}</td>
+            <td >{{itemLoan.Monto?.totalAmount | currency}}</td>
+            <td >{{itemLoan.Plazo?.description}}</td>
+            <td >{{itemLoan.Interest?.interest}} %</td>
+            <td>
+              <button (click)="goToAmortization(itemLoan)" type="button" class="btn btn-primary btn-sm" > Amortización</button>
+              <button (click)="deleteLoan(itemLoan.idLoan!)" type="button" class="btn btn-warning btn-sm ms-2"> Eliminar</button>
+
+            </td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+
+</div>
+

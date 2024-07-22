@@ -1,0 +1,21 @@
+.title{
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+
+}
+
+.container {
+    max-width: 80%;
+    padding: 15px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 60%;
+    min-width: 600px; /* Ajusta este valor según tus necesidades */
+}

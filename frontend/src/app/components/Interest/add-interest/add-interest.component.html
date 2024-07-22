@@ -1,0 +1,39 @@
+
+<div  class="row mt-4">
+    <div class="col-lg-4 offset-lg-4 "  >
+
+        <div class="card border-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header text-center">{{operacion}} Interes</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="addInterest()" >
+                    <div>
+                        <select class="form-select mt-4" id="exampleSelect1" formControlName="idPeriod">
+                          <option value="">Seleccionar Plazo</option>
+                          <option *ngFor="let period of periods" [value]="period.idPeriod">{{ period.description }}</option>
+                          <span *ngIf="form.get('idPeriod')?.hasError('required') && form.get('idPeriod')?.touched">
+                            El Campo Plazo es <strong>Obligatorio</strong>
+                        </span>
+                        </select>
+                        <div>
+                            <label for="interest" class="form-label mt-2">Porcentaje de Interes: </label>
+                            <input formControlName="interest" type="text" class="form-control" id="interest"  placeholder="Ingresa el Porcentaje"> 
+                            <span *ngIf="form.get('interest')?.hasError('required') && form.get('interest')?.touched">
+                                El Campo Porcentaje de Interes es <strong>Obligatorio</strong>
+                            </span>
+                        </div>
+                       
+                      </div>
+                    <div>
+                        <button [disabled]="form.invalid" type="submit" class="btn btn-success btn-sm ms-5 mt-4" > Guardar</button >
+                        <button routerLink="/intereses" type="button" class="btn btn-danger btn-sm ms-3 mt-4 "> Volver</button>
+                    </div>
+
+                </form>
+          </div>
+
+    </div>
+</div>
+
+
+</div>
+

@@ -1,0 +1,36 @@
+
+<div  class="container">
+    <div class="title">
+        <h4 >Lista de Plazos</h4>
+        <button type="button" class="btn btn-success " routerLink="/agregarPlazo">Agregar Plazo</button>
+    </div>
+    
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let itemPeriod of listPeriod "  class="table-secondary">
+            <td >{{itemPeriod.idPeriod}}</td>
+            <td >{{itemPeriod.description}}</td>
+            
+            <td>
+              <button [routerLink]="['/editarPlazo', itemPeriod.idPeriod]"   type="button" class="btn btn-primary btn-sm" > Editar</button>
+              <button (click)="deletePeriod(itemPeriod.idPeriod!)" type="button" class="btn btn-warning btn-sm ms-2"> Eliminar</button>
+
+            </td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+
+</div>
+

@@ -1,0 +1,33 @@
+
+<div  class="container">
+    <div class="title">
+        <h4 >Lista de Montos</h4>
+        <button type="button" class="btn btn-success " routerLink="/agregarMontos">Agregar Monto</button>
+    </div>
+    
+
+    <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Monto Total</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let itemAmount of listAmount"  class="table-secondary">
+            <td >{{itemAmount.idAmount}}</td>
+            <td >{{itemAmount.totalAmount | currency}}</td>
+            <td>
+              <button [routerLink]="['/editarMontos', itemAmount.idAmount]"   type="button" class="btn btn-primary btn-sm"  > Editar</button>
+              <button (click)="deleteAmount(itemAmount.idAmount!)" type="button" class="btn btn-warning btn-sm ms-2 "> Eliminar</button>
+
+            </td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+
+</div>

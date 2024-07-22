@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const periodController_1 = require("../controllers/periodController");
+const router = (0, express_1.Router)();
+router.get('/', periodController_1.getPeriods);
+router.get('/:idPeriod', periodController_1.getPeriod);
+router.post('/', periodController_1.postPeriod);
+router.delete('/:idPeriod', periodController_1.deletePeriod);
+router.put('/:idPeriod', periodController_1.putPeriod);
+exports.default = router;

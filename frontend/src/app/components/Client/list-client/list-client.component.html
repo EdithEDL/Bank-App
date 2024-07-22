@@ -1,0 +1,41 @@
+
+<div  class="container">
+    <div class="title">
+        <h4 >Lista de Clientes</h4>
+        <button type="button" class="btn btn-success " routerLink="/agregarCliente">Agregar Cliente</button>
+    </div>
+    
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apeidos</th>
+            <th scope="col">Email</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        
+          <tr *ngFor="let itemClient of listClient"  class="table-secondary">
+            <td >{{itemClient.idClient}}</td>
+            <td >{{itemClient.nameClient}}</td>
+            <td >{{itemClient.lastName}}</td>
+            <td >{{itemClient.email}}</td>
+            <td >{{itemClient.phone}}</td>
+
+            <td>
+              <button [routerLink]="['/editarCliente', itemClient.idClient]"   type="button" class="btn btn-primary btn-sm" > Editar</button>
+              <button (click)="deleteClient(itemClient.idClient!)" type="button" class="btn btn-warning btn-sm ms-2"> Eliminar</button>
+
+            </td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+
+</div>

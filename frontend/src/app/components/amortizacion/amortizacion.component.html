@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="title">
+      <h4>Amortización del Préstamo</h4>
+      <p>Cliente: {{ selectedLoan?.Cliente?.nameClient}}</p>
+      <p>Plazo: {{ selectedLoan?.Plazo?.description }}</p>
+      <p>Interés: {{ selectedLoan?.Interest?.interest }} %</p>
+      <p>Monto Inicial: {{ selectedLoan?.Monto?.totalAmount | currency }} </p>
+      <p>Prestamo Total: {{ this.totalLoan| currency}}</p>
+    </div>
+    
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">No. Pago</th>
+            <th scope="col">Fecha del Pago</th>
+            <th scope="col">Monto Total de la Cuota</th>
+            <th scope="col">Intereses</th>
+            <th scope="col">Amortización</th>
+            <th scope="col">Saldo del Préstamo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let payment of amortizationSchedule">
+            <td>{{ payment.paymentNumber }}</td>
+            <td>{{ payment.paymentDate }}</td>
+            <td>{{ payment.totalPayment | currency  }}</td>
+            <td>{{ payment.interestPayment | currency }}</td>
+            <td>{{ payment.principalPayment | currency }}</td>
+            <td>{{ payment.remainingBalance | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="button mt-3">
+      <button routerLink="/" type="button" class="btn btn-dark">Volver</button>
+    </div>
+  </div>
+  
+  

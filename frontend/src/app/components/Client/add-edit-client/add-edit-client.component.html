@@ -1,0 +1,58 @@
+
+<div  class="row mt-4">
+    <div class="col-lg-4 offset-lg-4 "  >
+
+        <div class="card border-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header text-center">{{operacion}} Cliente</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="addClient()" >
+                    <div>
+                        <label for="nameClient" class="form-label mt-2">Nombre: </label>
+                        <input formControlName="nameClient" type="text" class="form-control" id="nameClient"  placeholder="Ingresa el Nombre"> 
+                        <span *ngIf="form.get('nameClient')?.hasError('required') && form.get('nameClient')?.touched">
+                            El Campo Nombre es <strong>Obligatorio</strong>
+                        </span>
+                    </div>
+                    <div>
+                        <label for="lastName" class="form-label mt-2">Apeidos: </label>
+                        <input formControlName="lastName" type="text" class="form-control" id="lastName"  placeholder="Ingresa los Apeidos"> 
+                        <span *ngIf="form.get('lastName')?.hasError('required') && form.get('lastName')?.touched">
+                            El Campo Apeido es <strong>Obligatorio</strong>
+                        </span>
+                        
+                    </div>
+                    <div>
+                        <label for="email" class="form-label mt-2">Correo Electrónico: </label>
+                        <input formControlName="email"  type="email" class="form-control" id="email"  placeholder="Ingresa el Correo"> 
+                        <span *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+                            El Campo Email es <strong>Obligatorio</strong>
+                        </span>
+                        <span *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+                           El Campo Email no es válido
+                        </span>
+                    
+                    </div>
+                    <div>
+                        <label for="phone" class="form-label mt-2">Teléfono Celular: </label>
+                        <input formControlName="phone" type="number" class="form-control" id="phone"  placeholder="Ingresa el Teléfono">
+                        <span *ngIf="form.get('phone')?.hasError('required') && form.get('phone')?.touched">
+                            El Campo Teléfono es <strong>Obligatorio</strong>
+                        </span> 
+                        <span *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+                            El Campo Teléfono no es válido
+                        </span>
+                    </div>
+                    <div>
+                        <button [disabled]="form.invalid" type="submit" class="btn btn-success btn-sm ms-5 mt-4" > Guardar</button >
+                        <button routerLink="/cliente" type="button" class="btn btn-danger btn-sm ms-3 mt-4 "> Volver</button>
+                    </div>
+
+                </form>
+          </div>
+
+    </div>
+</div>
+
+
+</div>
+
