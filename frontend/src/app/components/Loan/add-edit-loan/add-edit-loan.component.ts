@@ -20,8 +20,6 @@ export class AddEditLoanComponent implements OnInit{
   periods: any[] = [];
   interest: any[] = [];
 
-
-
   constructor(private fb:FormBuilder, private aRouter:ActivatedRoute,
     private _loanService:LoanService, private toastr: ToastrService){
     this.form = this.fb.group({
