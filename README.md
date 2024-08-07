@@ -1,4 +1,4 @@
-# API de Gestión de usuario de Banco
+# Gestión de usuario de Banco
 
 Este es un proyecto que implementa un sistema de gestión de usuarios utilizando Angular CLI para el frontend y Node.js, Express, Sequelize, y MySQL para el backend.
 
